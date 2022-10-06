@@ -1,0 +1,42 @@
+.header {
+   padding: 2rem;
+   box-shadow: var(--shadow);
+   background-color: var(--colors-ui-base);
+}
+
+.container {
+   max-width: 1240px;
+   display: flex;
+   justify-content: space-between;
+   margin: 0 auto;
+}
+
+.link {
+   font-size: var(--fs-sm);
+   font-weight: var(--fw-bold);
+   text-decoration: none;
+   color: var(--colors-text);
+}
+
+.button {
+   font-size: var(--fs-sm);
+   font-weight: var(--fw-light);
+   color: var(--colors-text);
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+}
+
+.button p {
+   margin: 0 0 0 10px;
+}
+
+@media screen and (max-width: 400px) {
+   .link {
+      font-size: 12px
+   }
+
+   .button {
+      font-size: 12px
+   }
+}
