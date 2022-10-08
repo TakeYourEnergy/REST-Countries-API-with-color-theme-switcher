@@ -11,7 +11,7 @@ import { Cards } from './components/cards/cards';
 function App() {
   const dispatch = useDispatch()
   const load = useSelector(state => state.countryReducer.loading)
-
+  
   useEffect(() => {
     dispatch(setCountyAction())
   }, [dispatch])
