@@ -4,3 +4,9 @@ export const setInput = (value) => {
       payload: value
    }
 }
+
+export const clearInput = () => {
+   return {
+      type: 'CLEAR_INPUT'
+   }
+}

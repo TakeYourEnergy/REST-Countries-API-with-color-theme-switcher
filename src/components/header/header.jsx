@@ -4,6 +4,8 @@ import styles from './header.module.css';
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
 import { themeAction } from '../../redux/actions/theme-action';
 import { Link } from 'react-router-dom';
+import { clearInput } from '../../redux/actions/input-action';
+import { clearSelect } from '../../redux/actions/select-action';
 
 export const Header = () => {
    const dispatch = useDispatch()
@@ -18,10 +20,15 @@ export const Header = () => {
       else dispatch(themeAction('dark'))
    }
 
+   const clickLogo = () => {
+      dispatch(clearInput())
+      dispatch(clearSelect())
+   }
+
    return (
       <header className={styles.header}>
          <div className={styles.container}>
-            <Link className={styles.link} to='/'>Where in the world?</Link>
+            <Link onClick={() => clickLogo()} className={styles.link} to='/'>Where in the world?</Link>
             <div onClick={handleClick} className={styles.button}>
                {state === 'dark' ?
                   (<IoMoonOutline size='1.5rem' />) :

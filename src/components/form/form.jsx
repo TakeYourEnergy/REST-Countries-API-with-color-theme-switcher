@@ -1,10 +1,21 @@
 import React from 'react'
 import { InputSearch } from '../inputSearch/inputSearch'
 import styles from './form.module.css';
-import Select from 'react-select'
+import Select from 'react-select';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectAction } from '../../redux/actions/select-action';
 
 
 export const Form = () => {
+   const dispatch = useDispatch()
+   const region = useSelector(state => state.selectReducer.region)
+
+   const handleChange = (region) => {
+      // console.log(reg?.value || '')
+
+      //region - { value: 'Africa', label: 'Africa' }
+      dispatch(selectAction(region?.value || ''))
+   }
 
    const customStyles = {
       //опции - те значения, которые видные после раскрытия селекта
@@ -42,7 +53,16 @@ export const Form = () => {
    return (
       <div className={styles.form}>
          <InputSearch />
-         <Select classNamePrefix='custom-select' isSearchable={false} isClearable placeholder='Filter by region' options={options} styles={customStyles} />
+         <Select
+            classNamePrefix='custom-select'
+            isSearchable={false}
+            isClearable
+            placeholder='Filter by region'
+            options={options}
+            styles={customStyles}
+            onChange={handleChange}
+            // value={region}
+         />
       </div>
    )
 }

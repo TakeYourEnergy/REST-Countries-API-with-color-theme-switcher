@@ -1,18 +1,18 @@
 const initialState = {
-   search: '',
+   region: ''
 }
 
-export const inputReducer = (state = initialState, action) => {
+export const selectReducer = (state = initialState, action) => {
    switch (action.type) {
-      case 'SET_INPUT':
+      case 'SET_REGION':
          return {
             ...state,
-            search: action.payload
+            region: action.payload
          }
-      case 'CLEAR_INPUT':
+      case 'CLEAR_SELECT':
          return {
             ...state,
-            search: ''
+            region: ''
          }
       default:
          return state
