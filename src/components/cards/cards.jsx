@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Card } from '../card/card';
-import styles from './cards.module.css'
+import styles from './cards.module.css';
+import { Link } from 'react-router-dom';
 
 
 export const Cards = () => {
@@ -17,14 +18,15 @@ export const Cards = () => {
       <div className={styles.container}>
          {countries.map(country => {
             return (
-               <Card
-                  key={country.name}
-                  png={country.flags.png}
-                  name={country.name}
-                  population={country.population}
-                  region={country.region}
-                  capital={country.capital}
-               />
+               <Link className={styles.link} key={country.name} to={`/country/${country.name}`}>
+                  <Card
+                     png={country.flags.png}
+                     name={country.name}
+                     population={country.population}
+                     region={country.region}
+                     capital={country.capital}
+                  />
+               </Link>
             )
          })}
       </div>

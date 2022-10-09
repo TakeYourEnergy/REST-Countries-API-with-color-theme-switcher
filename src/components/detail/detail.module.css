@@ -1,0 +1,23 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   color: var(--colors-text);
+   background-color: var(--colors-bg);
+   padding: 20px;
+}
+
+.image {
+   width: 100%;
+   max-width: 600px;
+   height: auto;
+}
+
+.country {
+   margin: 30px 0 10px 0;
+}
+
+.capital,
+.population,
+.region {
+   margin: 0;
+}
