@@ -5,6 +5,7 @@ import { Spinner } from '../components/spinner/spinner';
 import { useSelector } from 'react-redux';
 
 export const HomePage = () => {
+   // const state = useSelector(state => console.log(state))
    const load = useSelector(state => state.countryReducer.loading)
 
    return (

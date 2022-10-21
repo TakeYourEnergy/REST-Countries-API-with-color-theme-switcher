@@ -9,21 +9,21 @@ import { Details } from './pages/details'
 
 
 function App() {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(setCountyAction())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(setCountyAction())
+  // }, [dispatch])
 
 
   return (
     <div>
       <Header />
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/country/:name' element={<Details />} />
         <Route path='*' element={<NotFound />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }

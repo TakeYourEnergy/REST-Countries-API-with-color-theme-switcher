@@ -6,6 +6,7 @@ import { themeAction } from '../../redux/actions/theme-action';
 import { Link } from 'react-router-dom';
 import { clearInput } from '../../redux/actions/input-action';
 import { clearSelect } from '../../redux/actions/select-action';
+import { toggleTheme } from '../../redux/slices/themeSlices';
 
 export const Header = () => {
    const dispatch = useDispatch()
@@ -16,8 +17,8 @@ export const Header = () => {
    }, [state])
 
    const handleClick = () => {
-      if (state === 'dark') dispatch(themeAction('light'))
-      else dispatch(themeAction('dark'))
+      if (state === 'dark') dispatch(toggleTheme('light'))
+      else dispatch(toggleTheme('dark'))
    }
 
    const clickLogo = () => {

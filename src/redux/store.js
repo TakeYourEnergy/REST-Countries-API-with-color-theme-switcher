@@ -1,9 +1,11 @@
-import { createStore, applyMiddleware } from "redux";
 import { rootReducer } from './reducers/rootReducer';
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { configureStore } from "@reduxjs/toolkit";
+import { themeSlice } from './slices/themeSlices';
 
-export let store = createStore(
-   rootReducer,
-   composeWithDevTools(applyMiddleware(thunk))
-)
+export const store = configureStore({
+   reducer: {
+      // rootReducer: rootReducer,
+      themeReducer: themeSlice.reducer
+   },
+   devTools: true
+})

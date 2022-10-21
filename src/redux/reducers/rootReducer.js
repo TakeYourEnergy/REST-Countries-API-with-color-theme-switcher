@@ -6,7 +6,7 @@ import { selectReducer } from './select-reducer';
 import { detailReducer } from './detail-reducer';
 
 export const rootReducer = combineReducers({
-   themeReducer,
+   // themeReducer,
    countryReducer,
    inputReducer,
    selectReducer,
