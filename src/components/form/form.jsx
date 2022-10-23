@@ -3,7 +3,7 @@ import { InputSearch } from '../inputSearch/inputSearch'
 import styles from './form.module.css';
 import Select from 'react-select';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAction } from '../../redux/actions/select-action';
+import { selectAction } from '../../redux/slices/selectSlices'; 
 
 
 export const Form = () => {

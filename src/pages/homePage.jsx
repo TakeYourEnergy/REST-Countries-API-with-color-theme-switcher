@@ -5,15 +5,14 @@ import { Spinner } from '../components/spinner/spinner';
 import { useSelector } from 'react-redux';
 
 export const HomePage = () => {
-   // const state = useSelector(state => console.log(state))
    const load = useSelector(state => state.countryReducer.loading)
 
    return (
       <>
          <Form />
          <Cards />
-         <div className={load ? 'spinner' : 'nullSpinner'}>
-            <Spinner load={load} />
+         <div className={load === 'loading' ? 'spinner' : 'nullSpinner'}>
+            <Spinner />
          </div>
       </>
    )

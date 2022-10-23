@@ -2,10 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import styles from './header.module.css';
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
-import { themeAction } from '../../redux/actions/theme-action';
 import { Link } from 'react-router-dom';
-import { clearInput } from '../../redux/actions/input-action';
-import { clearSelect } from '../../redux/actions/select-action';
+import { clearInput } from '../../redux/slices/inputSlices';
+import { clearSelect } from '../../redux/slices/selectSlices'; 
 import { toggleTheme } from '../../redux/slices/themeSlices';
 
 export const Header = () => {

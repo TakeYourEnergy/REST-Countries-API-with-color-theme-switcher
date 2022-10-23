@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoSearch } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './inputSearch.module.css';
-import { setInput } from '../../redux/actions/input-action';
+import { setInput } from '../../redux/slices/inputSlices'; 
 
 export const InputSearch = () => {
    const dispatch = useDispatch()

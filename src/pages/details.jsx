@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-import { clearDetails, setDetailAction } from '../redux/actions/detail-action';
+import { clearDetails, setDetailAction } from '../redux/slices/detailSlices';
 import styles from './details.module.css';
 import { Detail } from '../components/detail/detail';
 import { Spinner } from '../components/spinner/spinner';
@@ -27,7 +27,7 @@ export const Details = () => {
             <button onClick={() => navigate(-1)} type='button' className={styles.button}>Назад</button>
             <Detail />
          </div>
-         <div className={loading ? 'spinner' : 'nullSpinner'}>
+         <div className={loading === 'loading' ? 'spinner' : 'nullSpinner'}>
             <Spinner />
          </div>
       </>
