@@ -14,7 +14,10 @@ export const Details = () => {
    const loading = useSelector(state => state.detailReducer.loading);
 
    useEffect(() => {
-      dispatch(setDetailAction(name))
+      if (name) {
+         dispatch(setDetailAction(name))
+      }
+
 
       return () => {
          dispatch(clearDetails())

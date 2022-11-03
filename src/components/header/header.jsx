@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
 import styles from './header.module.css';
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { clearInput } from '../../redux/slices/inputSlices';
-import { clearSelect } from '../../redux/slices/selectSlices'; 
+import { clearSelect } from '../../redux/slices/selectSlices';
 import { toggleTheme } from '../../redux/slices/themeSlices';
+import { useAppDispatch, useAppSelector } from '../../redux/redux-hooks/redux-hooks';
 
 export const Header = () => {
-   const dispatch = useDispatch()
-   const state = useSelector(state => state.themeReducer)
+   const dispatch = useAppDispatch()
+   const state = useAppSelector(state => state.themeReducer)
 
    useEffect(() => {
       document.body.setAttribute('data-theme', state)

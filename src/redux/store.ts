@@ -15,3 +15,6 @@ export const store = configureStore({
    },
    devTools: true
 })
+
+export type RootState = ReturnType<typeof store.getState>; // для селектора
+export type AppDispatch = typeof store.dispatch; // для диспатча

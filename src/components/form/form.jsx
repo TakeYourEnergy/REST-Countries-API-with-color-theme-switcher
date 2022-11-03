@@ -2,13 +2,13 @@ import React from 'react'
 import { InputSearch } from '../inputSearch/inputSearch'
 import styles from './form.module.css';
 import Select from 'react-select';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectAction } from '../../redux/slices/selectSlices'; 
+import { selectAction } from '../../redux/slices/selectSlices';
+import { useAppDispatch, useAppSelector } from '../../redux/redux-hooks/redux-hooks';
 
 
 export const Form = () => {
-   const dispatch = useDispatch()
-   const region = useSelector(state => state.selectReducer.region)
+   const dispatch = useAppDispatch()
+   const region = useAppSelector(state => state.selectReducer.region)
 
    const handleChange = (region) => {
       // console.log(reg?.value || '')
@@ -61,7 +61,7 @@ export const Form = () => {
             options={options}
             styles={customStyles}
             onChange={handleChange}
-            // value={region}
+         // value={region}
          />
       </div>
    )

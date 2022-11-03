@@ -1,15 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { Card } from '../card/card';
 import styles from './cards.module.css';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../redux/redux-hooks/redux-hooks';
 
 
 export const Cards = () => {
-   const search = useSelector(state => state.inputReducer.search)
-   const region = useSelector(state => state.selectReducer.region)
+   const search = useAppSelector(state => state.inputReducer.search)
+   const region = useAppSelector(state => state.selectReducer.region)
 
-   const countries = useSelector(state => state.countryReducer.country.filter(item =>
+   const countries = useAppSelector(state => state.countryReducer.country.filter(item =>
       item.name.toLowerCase().includes(search.toLowerCase()) &&
       item.region.toLowerCase().includes(region.toLowerCase())
    ))
