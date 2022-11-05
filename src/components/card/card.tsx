@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './card.module.css'
 
-export const Card = ({ png, name, population, region, capital }) => {
+interface ICard {
+   png: string;
+   name: string;
+   population: number;
+   region: string;
+   capital: string
+}
+
+export const Card: FC<ICard> = ({ png, name, population, region, capital }) => {
    return (
       <div className={styles.container}>
          <img className={styles.img} src={png} alt={name} />

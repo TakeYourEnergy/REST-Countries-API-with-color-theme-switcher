@@ -5,13 +5,14 @@ import { clearDetails, setDetailAction } from '../redux/slices/detailSlices';
 import styles from './details.module.css';
 import { Detail } from '../components/detail/detail';
 import { Spinner } from '../components/spinner/spinner';
+import { useAppDispatch, useAppSelector } from '../redux/redux-hooks/redux-hooks';
 
 export const Details = () => {
    const { name } = useParams();
    const navigate = useNavigate();
-   const dispatch = useDispatch();
+   const dispatch = useAppDispatch();
 
-   const loading = useSelector(state => state.detailReducer.loading);
+   const loading = useAppSelector(state => state.detailReducer.loading);
 
    useEffect(() => {
       if (name) {

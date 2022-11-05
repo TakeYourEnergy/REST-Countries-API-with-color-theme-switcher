@@ -25,7 +25,9 @@ interface IDetailCountry {
    timezones: Array<string>;
    topLevelDomain: string[];
    translations: Array<{ [key: string]: string }>;
+   borders: string[]
 }
+
 
 export const setDetailAction = createAsyncThunk(
    '@@detail/country',
@@ -62,7 +64,7 @@ export const detailSlice = createSlice({
    name: '@@detail',
    initialState,
    reducers: {
-      clearDetails: (state, action) => {
+      clearDetails: (state) => {
          state.country = [];
          state.neighbours = [];
          state.loading = 'idle'

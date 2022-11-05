@@ -1,17 +1,28 @@
 import React from 'react'
 import { InputSearch } from '../inputSearch/inputSearch'
 import styles from './form.module.css';
-import Select from 'react-select';
+import Select, { Props, ActionMeta } from 'react-select';
 import { selectAction } from '../../redux/slices/selectSlices';
 import { useAppDispatch, useAppSelector } from '../../redux/redux-hooks/redux-hooks';
+
+export interface ICountryOption {
+   value: string;
+   label: string;
+}
+
+const MySelect = (props: Props<ICountryOption, false>) => {
+   return (
+      <Select {...props} />
+   )
+}
 
 
 export const Form = () => {
    const dispatch = useAppDispatch()
    const region = useAppSelector(state => state.selectReducer.region)
 
-   const handleChange = (region) => {
-      // console.log(reg?.value || '')
+   const handleChange = (region: any) => {
+      //console.log(region?.value || '')
 
       //region - { value: 'Africa', label: 'Africa' }
       dispatch(selectAction(region?.value || ''))
@@ -19,7 +30,7 @@ export const Form = () => {
 
    const customStyles = {
       //опции - те значения, которые видные после раскрытия селекта
-      option: (provided, state) => ({
+      option: (provided: any, state: any) => ({
          ...provided,
          backgroundColor: state.isSelected ? 'var(--colors-bg)' : 'var(--colors-ui-base)',
          color: 'var(--colors-text)',
@@ -27,7 +38,7 @@ export const Form = () => {
          margin: '0px',
       }),
       //контроль - начальный селект, который мы видим
-      control: (provided) => ({
+      control: (provided: any) => ({
          ...provided,
          backgroundColor: 'var(--colors-ui-base)',
          color: 'var(--colors-text)',
@@ -42,7 +53,7 @@ export const Form = () => {
       })
    }
 
-   const options = [
+   const options: ICountryOption[] = [
       { value: 'Africa', label: 'Africa' },
       { value: 'America', label: 'America' },
       { value: 'Asia', label: 'Asia' },

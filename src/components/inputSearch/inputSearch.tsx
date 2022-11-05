@@ -8,7 +8,7 @@ export const InputSearch = () => {
    const dispatch = useAppDispatch()
    const inputValue = useAppSelector(state => state.inputReducer.search)
 
-   const handleChange = (e) => {
+   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       dispatch(setInput(e.target.value))
    }
 
