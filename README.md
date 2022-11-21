@@ -1,12 +1,15 @@
-# COUNRIES-API
+# [Pet-Проект «COUNRIES-API»](https://takeyourenergy.github.io/REST-Countries-API-with-color-theme-switcher/)
 
-задание с Frontend Mentor уровень - advanced.
+## Функционал:
+Разработка интерфейса отображения стран, есть возможность увидеть информацию о стране, ее соседях, есть переключатель темы, есть фильтрация стран по названию и континенту.
+
+Задание с Frontend Mentor уровень - advanced.
+
+## Технологии:
+React.js, Redux, TypeScript, HTML, CSS, React-Select, React-Router v6, Axios
 
 
-# Использованные технологии:
-
-1) React
-2) Redux
-3) Axios
-4) React-router-dom
-
+## Как запустить проект:
+1) Склонировать git clone git@github.com:TakeYourEnergy/REST-Countries-API-with-color-theme-switcher.git
+2) Скачать зависимости npm install
+3) Запустить проект npm run start
